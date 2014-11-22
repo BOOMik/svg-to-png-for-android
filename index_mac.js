@@ -2,17 +2,17 @@ var fs = require('fs')
   , http = require('http')
   , open = require('open');
 
-var config = JSON.parse(fs.readFileSync(__dirname + '\\config.json'));
+var config = JSON.parse(fs.readFileSync(__dirname + '/config.json'));
 
 http.createServer(function (req, res) {
 
 
   if (!fs.existsSync(config.outputFolder))
     fs.mkdirSync(config.outputFolder);
-  if (!fs.existsSync(config.outputFolder+'\\Android'))
-    fs.mkdirSync(config.outputFolder+'\\Android');
-  if (!fs.existsSync(config.outputFolder+'\\iOS'))
-    fs.mkdirSync(config.outputFolder+'\\iOS');
+  if (!fs.existsSync(config.outputFolder+'/Android'))
+    fs.mkdirSync(config.outputFolder+'/Android');
+  if (!fs.existsSync(config.outputFolder+'/iOS'))
+    fs.mkdirSync(config.outputFolder+'/iOS');
 
   loadReqBody(req, function(parsedReqBody) {
     switch (req.url) {
@@ -51,7 +51,7 @@ http.createServer(function (req, res) {
 });
 
 function loadMainPage(callback) {
-  fs.readFile(__dirname + '\\index.htm', function (err, data) {
+  fs.readFile(__dirname + '/index.htm', function (err, data) {
     if (err)
       throw err;
 
@@ -85,10 +85,10 @@ var regex1x = /^.*1x$/
 	var imageName;
 	
   if (regexdpi.test(options.type)) {
-		imagePath = config.outputFolder + '\\Android\\drawable-' + options.type + '\\';
+		imagePath = config.outputFolder + '/Android/drawable-' + options.type + '/';
 		imageName = options.name + '.' + imageExt
 	} else {
-		imagePath = config.outputFolder + '\\iOS\\';
+		imagePath = config.outputFolder + '/iOS/';
 		if (regex1x.test(options.type)) {
 		imageName = options.name+ '.' + imageExt;
 		} else {

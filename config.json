@@ -9,6 +9,9 @@
       "/svg/ic_bar_add.svg"
     ],
     "sizes": {
+      "1x": { "width": 36, "height": 36 },
+      "2x": { "width": 50, "height": 50 },
+      "3x": { "width": 76, "height": 76 },
       "ldpi": { "width": 24, "height": 24 },
       "mdpi": { "width": 32, "height": 32 },
       "hdpi": { "width": 48, "height": 48 },
@@ -16,5 +19,5 @@
       "xxhdpi": { "width": 96, "height": 96 }
     }
   }],
-  "outputFolder": "C:\\svg-android\\out"
+  "outputFolder": "out"
 }
